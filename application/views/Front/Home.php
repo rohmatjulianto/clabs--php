@@ -128,7 +128,39 @@
           </div> 
         </v-container>
       </v-parallax>
+      <div class="brown lighten-5 py-6 text-center">
+        <v-container>
+          <div class="text-center">
+            <h2 class="title-head">As Seen In</h2>
+          </div>
+          <v-row>
+            <v-col cols="6" md="3" 
+            v-for="n in 8"
+            :key="n">
+           
+              <v-img
+              :src="`https://upload.wikimedia.org/wikipedia/commons/a/a7/Tokopedia.svg`"
+              contain
+              max-height="40"
+              class="ma-3"
+            >
+            <template v-slot:placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+              </v-row>
+            </template>
 
+            </v-card>
+               
+            </v-col>
+          </v-row>
+        </v-container>
+      </div>
+     
       </v-content>
 
     <v-footer padless>
@@ -147,7 +179,7 @@
             <v-container>
                 <v-row>
 
-              <v-col  cols="12" md="3" 
+              <v-col  cols="6" md="3" 
               v-for="n in 3"
               :key="n">
                   <div class="pa-6 text-left">
