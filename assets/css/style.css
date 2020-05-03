@@ -1,0 +1,22 @@
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 7vh;
+}
+
+.title-head{
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+
+.subtitle-head{
+    margin-bottom: 2rem;
+}
+
+.section-story{
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.no-padding{
+    padding: 0;
+}
