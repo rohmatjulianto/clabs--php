@@ -2,7 +2,8 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  
+
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <!-- owl carousel -->
@@ -91,23 +92,35 @@
             <div class="item" 
               v-for="n in 6"
               :key="n">
-                <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                  aspect-ratio="1"
-                  height="400"
-                  class="grey lighten-2"
-                >
-                <template v-slot:placeholder>
-                  <v-row
-                    class="fill-height ma-0"
-                    align="center"
-                    justify="center"
-                  >
-                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                  </v-row>
-                </template>
+              
+            <v-row align="center" justify="center">
+              <v-col col="12" md="6">
+                <v-img 
+                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
                 </v-img>
+              </v-col>
+              <v-col col="12" md="6">
+                <div color="primary" background-color="light-blue">
+                  <v-card-title class="headline ">Visual Design</v-card-title>
+                  <v-card-subtitle class="subtitle-1">
+                    <ul>
+                      <li v-for="n in 3" :key="n"> 
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, tempora hic consequuntur 
+                      </li>
+                    </ul>
+                  </v-card-subtitle>
+                  
+               
+              <v-card-actions >
+                <v-btn text tile>Go to Our Service
+                  <v-icon left>mdi mdi-chevron-right</v-icon>
+                </v-btn>
+              </v-card-actions>
+                </div>
+                
+              </v-col>
+            </v-row>
+              
             </div>
         </div>
 
@@ -223,34 +236,16 @@
                       <div class="subheading font-weight-bold mb-3">Contact Us</div>
              
                         <a href="" class="nav-item nav-link no-padding my-2" text>
-                          <v-icon left>fab fa-envelope</v-icon> eathercreatibelab@gmail.com
+                          <v-icon left>mdi mdi-email</v-icon> eathercreatibelab@gmail.com
                         </a>
                         <a href="" class="nav-item nav-link no-padding my-2" text>
-                          <v-icon left>fab fa-phone</v-icon> 0823 2823 2820 2803
+                          <v-icon left>mdi mdi-phone-hangup</v-icon> 0823 2823 2820 2803
                         </a>
                         <a href="" class="nav-item nav-link no-padding my-2" text>
-                          <v-icon left>fab fa-instagram</v-icon> @athercreatibel
+                          <v-icon left>mdi mdi-instagram</v-icon> @athercreatibel
                         </a>
                      
-                
-                        <!-- <v-list>
-                        
-                            <v-list-item
-                              v-for="(item, i) in items"
-                              :key="i"
-                            >
-                              <v-list-item-icon>
-                                <v-icon >fab fa-facebook"></v-icon>
-                              </v-list-item-icon>
-                              <v-list-item-content>
-                                <v-list-item-title v-text="asdsa"></v-list-item-title>
-                              </v-list-item-content>
-                            </v-list-item>
-                        
-                        </v-list> -->
-                        <!-- <a class="nav-link no-padding" href="#">Home</a>
-                        <a class="nav-item nav-link no-padding"  href="#">Our Portfolio</a>
-                        <a class="nav-item nav-link no-padding" href="#">Our Pricing</a> -->
+            
                   
                   </div>
               </v-col>
@@ -301,7 +296,7 @@
         margin:20,
         nav:false,
         autoplay:true,
-        autoplayTimeout:1000,
+        autoplayTimeout:3000,
         autoplayHoverPause:true,
         responsive:{
             0:{
@@ -321,7 +316,7 @@
         margin:20,
         nav:false,
         autoplay:true,
-        autoplayTimeout:1000,
+        autoplayTimeout:3000,
         autoplayHoverPause:true,
         responsive:{
             0:{
