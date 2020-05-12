@@ -1,11 +1,12 @@
 html{
     scroll-behavior: smooth;
-    scroll-padding-top: 7vh;
+    scroll-padding-top: 6vh;
 }
 
 .title-head{
     margin-bottom: 0.5rem;
     line-height: 1.7;
+    font-family: HKGrotesk, Arial, sans-serif;
 }
 
 .subtitle-head{
@@ -19,4 +20,13 @@ html{
 }
 .no-padding{
     padding: 0;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-family: HKGrotesk, Arial, sans-serif;
+    color: #4A4A4A;
+    font-size: 14px;
+}
+body{
+    font-family: HKGrotesk, Arial, sans-serif;
 }

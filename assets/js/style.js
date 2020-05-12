@@ -17,11 +17,11 @@ var home = new Vue({
         'Fifth',
     ],
     icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram',
+        'mdi mdi-facebook',
+        'mdi mdi-twitter',
+        'mdi mdi-google-plus',
+        'mdi mdi-linkedin',
+        'mdi mdi-instagram',
     ],
     items: [
         {

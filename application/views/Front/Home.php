@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  
-
+  <link href="https://fonts.googleapis.com/css?family=Serif:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <!-- owl carousel -->
@@ -22,15 +20,18 @@
 
     <nav  class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <v-container>
-    <a class="navbar-brand" href="#">Creative Labs</a>
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#">
+        <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
+        <img src="<?=base_url()?>assets/image/logo.png" height="30" alt=""> 
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link font-weight-bold" href="#home">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link font-weight-bold" href="#portfolio">Our Portfolio</a>
-                <a class="nav-item nav-link font-weight-bold" href="#pricing">Our Pricing</a>
+                <a class="nav-item nav-link font-weight-bold" href="#home">HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link font-weight-bold" href="#portfolio">OUR PORTFOLIO</a>
+                <a class="nav-item nav-link font-weight-bold" href="#pricing">OUT PRICING</a>
             </div>
         </div>
     </v-container>
@@ -48,9 +49,9 @@
           ></v-carousel-item>
         </v-carousel>   
 
-          <v-container pa-6 id="portfolio">
+          <v-container pa-6 mt-10 id="portfolio">
             <div class="section-story text-center">
-                <h2 class="title-head">Our Portfolio</h2>
+                <h2 class="title-head font-weight-bold">Our Portfolio</h2>
                 <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
             </div>
             
@@ -58,13 +59,14 @@
               <v-col
                 v-for="n in 6"
                 :key="n"
-                class="d-flex child-flex"
-                cols="4"
+                height="400"
+                class="d-flex child-flex ma-0"
+                cols="6" md="4"
               >
                 <v-card flat tile class="d-flex">
                   <v-img
-                    :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                    :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                    :src="`<?=base_url()?>assets/image/Porto/${n}.jpeg`"
+                    :lazy-src="`<?=base_url()?>assets/image/Porto/${n}.jpeg`"
                     aspect-ratio="1"
                     class="grey lighten-2"
                   >
@@ -81,28 +83,36 @@
                 </v-card>
               </v-col>
             </v-row>
+         
+            <div class="text-right">
+              <v-btn right text>See More Portfolio
+                <v-icon class="mx-2">mdi mdi-chevron-right</v-icon>
+              </v-btn>
+            </div>
+           
+            
         </v-container>
 
-        <v-container pa-6 id="our-service">
+        <v-container pa-6 mt-10 id="our-service">
           <div class="section-story text-center">
-              <h2 class="title-head">Our Service</h2>
+              <h2 class="title-head font-weight-bold">Our Service</h2>
               <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
           </div>
           <div id="owl-1" class="owl-carousel owl-theme">
             <div class="item" 
-              v-for="n in 6"
+              v-for="n in 4"
               :key="n">
               
             <v-row align="center" justify="center">
-              <v-col col="12" md="6">
+              <v-col cols="12" md="6">
                 <v-img 
                 src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
                 </v-img>
               </v-col>
-              <v-col col="12" md="6">
-                <div color="primary" background-color="light-blue">
-                  <v-card-title class="headline ">Visual Design</v-card-title>
-                  <v-card-subtitle class="subtitle-1">
+              <v-col cols="12" md="6">
+                <div color="primary">
+                  <v-card-title class="headline font-weight-bold">Visual Design</v-card-title>
+                  <v-card-subtitle class="subtitle-1 pt-10" >
                     <ul>
                       <li v-for="n in 3" :key="n"> 
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, tempora hic consequuntur 
@@ -128,9 +138,9 @@
       </v-container>
       
 
-        <v-container pa-6 id="pricing">
+        <v-container pa-6 mt-10 id="pricing">
           <div class="section-story text-center">
-              <h2 class="title-head">Our Pricing</h2>
+              <h2 class="title-head font-weight-bold">Our Pricing</h2>
               <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
           </div>
           <div id="owl-0" class="owl-carousel owl-theme">
@@ -166,8 +176,8 @@
         src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
         >
         <v-container>
-          <div class="text-center pa-6">
-            <h1 class="display-1 mb-4">Colaborate with us</h1>
+          <div class="text-center py-10">
+            <h1 class="display-1 mb-4 font-weight-bold">Colaborate with us</h1>
             <p class="body-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio excepturi laborum a officia corrupti quibusdam neque nulla veniam corporis esse, quaerat totam expedita rem fugit eius cupiditate, nam eligendi vitae.</p>
             <v-btn class="px-8" x-large>LET'S TALK</v-btn>
           </div> 
@@ -176,7 +186,7 @@
       <div class="brown lighten-5 py-6 text-center">
         <v-container>
           <div class="text-center">
-            <h2 class="title-head">As Seen In</h2>
+            <h5 class="title-head font-weight-bold pt-10">As Seen In</h5>
           </div>
           <v-row>
             <v-col cols="6" md="3" 
@@ -212,7 +222,7 @@
     <v-footer padless>
         <v-content>
 
-            <div class="blue-grey lighten-3 text-center pa-2">
+            <div class="grey lighten-1 text-center pa-2">
                 <v-btn
                     v-for="icon in icons"
                     :key="icon"
@@ -226,8 +236,8 @@
                 <v-row align="center" justify="center">
               <v-col  cols="12" md="4"
                >
-                <div class="text-center " >
-                  <v-btn large outlined >LOGO Creative Labs</v-btn>
+                <div class="text-center pa-6">
+                  <v-img src="<?=base_url()?>assets/image/navlogo.png">
                 </div>
               </v-col>
 
@@ -263,8 +273,8 @@
                 </v-row>
               </v-container>
 
-              <div class="indigo lighten-1 white--text text-center pa-4">
-                {{ new Date().getFullYear() }} — <strong>Creative Labs</strong>
+              <div class="grey lighten-3 dark--text text-center pa-4">
+               Ether Creative Lab ©{{ new Date().getFullYear() }} All Rights Reserved
               </div>
 
               
