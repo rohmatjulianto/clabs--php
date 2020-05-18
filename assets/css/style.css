@@ -6,11 +6,32 @@ html{
 .title-head{
     margin-bottom: 0.5rem;
     line-height: 1.7;
-    font-family: HKGrotesk, Arial, sans-serif;
+    font-weight: 550;
+    font-family: "HKGrotesk", Arial, sans-serif;
+    color: #4A4A4A;
 }
 
+.v-btn__content{
+    font-weight: 600;
+    font-family: "HKGrotesk", Arial, sans-serif !important;
+}
+.v-application .headline{
+    font-family: "HKGrotesk", Arial, sans-serif !important;
+}
 .subtitle-head{
     margin-bottom: 2rem;
+}
+.v-application p{
+    font-size: 15px;
+    font-family: "CrimsonText", "Times New Roman", serif !important;
+}
+
+.v-application .body-1{
+    font-family: "CrimsonText", "Times New Roman", serif !important;
+}
+
+.v-application .display-1{
+    font-family: "HKGrotesk", Arial, sans-serif !important;
 }
 
 .section-story{
@@ -23,10 +44,7 @@ html{
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: HKGrotesk, Arial, sans-serif;
+    font-family: "HKGrotesk", Arial, sans-serif;
     color: #4A4A4A;
     font-size: 14px;
-}
-body{
-    font-family: HKGrotesk, Arial, sans-serif;
 }

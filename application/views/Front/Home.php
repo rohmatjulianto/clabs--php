@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Serif:100,300,400,500,700,900" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <!-- owl carousel -->
@@ -16,9 +15,9 @@
 <body>
 
 <div id="app">
-    <v-app>
+    <v-app class="myFont">
 
-    <nav  class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav  class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <v-container>
       <a class="navbar-brand" href="#">
         <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt=""> -->
@@ -51,8 +50,8 @@
 
           <v-container pa-6 mt-10 id="portfolio">
             <div class="section-story text-center">
-                <h2 class="title-head font-weight-bold">Our Portfolio</h2>
-                <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
+                <h2 class="title-head">Our Portfolio</h2>
+                <p class="subtitle-head py-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
             </div>
             
             <v-row>
@@ -95,26 +94,39 @@
 
         <v-container pa-6 mt-10 id="our-service">
           <div class="section-story text-center">
-              <h2 class="title-head font-weight-bold">Our Service</h2>
-              <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
+              <h2 class="title-head ">Our Service</h2>
+              <p class="subtitle-head py-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
           </div>
+
           <div id="owl-1" class="owl-carousel owl-theme">
-            <div class="item" 
+            <div class="item"  style="background-color: #F5F5F5;"
               v-for="n in 4"
               :key="n">
               
-            <v-row align="center" justify="center">
-              <v-col cols="12" md="6">
+            <v-row  align="center" justify="center" >
+              <v-col cols="12" md="6" class="no-padding">
                 <v-img 
-                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg">
+                src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                lazy-src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+                aspect-ratio="1.4"
+                class="grey lighten-2">
+                <template v-slot:placeholder>
+                  <v-row
+                    class="fill-height ma-0"
+                    align="center"
+                    justify="center"
+                  >
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-row>
+                </template>
                 </v-img>
               </v-col>
-              <v-col cols="12" md="6">
-                <div color="primary">
-                  <v-card-title class="headline font-weight-bold">Visual Design</v-card-title>
+              <v-col cols="12" md="6" >
+  
+                  <v-card-title class="headline">Visual Design</v-card-title>
                   <v-card-subtitle class="subtitle-1 pt-10" >
                     <ul>
-                      <li v-for="n in 3" :key="n"> 
+                      <li v-for="n in 3" :key="n" class="body-1"> 
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, tempora hic consequuntur 
                       </li>
                     </ul>
@@ -122,11 +134,12 @@
                   
                
               <v-card-actions >
-                <v-btn text tile>Go to Our Service
-                  <v-icon left>mdi mdi-chevron-right</v-icon>
+                <v-btn text tile>
+                  <v-icon left>mdi mdi-arrow-right</v-icon>
+                  Go to Our Service
                 </v-btn>
               </v-card-actions>
-                </div>
+                
                 
               </v-col>
             </v-row>
@@ -140,8 +153,8 @@
 
         <v-container pa-6 mt-10 id="pricing">
           <div class="section-story text-center">
-              <h2 class="title-head font-weight-bold">Our Pricing</h2>
-              <p class="subtitle-head">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
+              <h2 class="title-head">Our Pricing</h2>
+              <p class="subtitle-head py-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
           </div>
           <div id="owl-0" class="owl-carousel owl-theme">
             <div class="item" 
@@ -173,20 +186,20 @@
       <v-parallax
         dark
         height="auto"
-        src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        src="https://s3-ap-southeast-1.amazonaws.com/chicanddarling-web/setting/home_collab_img/Boenkus%20collab.jpg"
         >
         <v-container>
           <div class="text-center py-10">
-            <h1 class="display-1 mb-4 font-weight-bold">Colaborate with us</h1>
+            <h1 class="display-1 mb-4">Colaborate with us</h1>
             <p class="body-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio excepturi laborum a officia corrupti quibusdam neque nulla veniam corporis esse, quaerat totam expedita rem fugit eius cupiditate, nam eligendi vitae.</p>
             <v-btn class="px-8" x-large>LET'S TALK</v-btn>
           </div> 
         </v-container>
       </v-parallax>
-      <div class="brown lighten-5 py-6 text-center">
+      <div class="white py-6 text-center">
         <v-container>
           <div class="text-center">
-            <h5 class="title-head font-weight-bold pt-10">As Seen In</h5>
+            <h5 class="title-head pt-10">As Seen In</h5>
           </div>
           <v-row>
             <v-col cols="6" md="3" 
@@ -194,9 +207,8 @@
             :key="n">
            
               <v-img
-              :src="`https://upload.wikimedia.org/wikipedia/commons/a/a7/Tokopedia.svg`"
+              :src="`https://s3-ap-southeast-1.amazonaws.com/chicanddarling-web/press_logo/md1uJ/logo_asseenin_8.png`"
               contain
-              max-height="40"
               class="ma-3"
             >
       
@@ -245,7 +257,7 @@
                   <div class="pa-6 text-left">
                       <div class="subheading font-weight-bold mb-3">Contact Us</div>
              
-                        <a href="" class="nav-item nav-link no-padding my-2" text>
+                        <a href="mailto:eathercreatibelab@gmail.com" class="nav-item nav-link no-padding my-2" text>
                           <v-icon left>mdi mdi-email</v-icon> eathercreatibelab@gmail.com
                         </a>
                         <a href="" class="nav-item nav-link no-padding my-2" text>
@@ -273,7 +285,7 @@
                 </v-row>
               </v-container>
 
-              <div class="grey lighten-3 dark--text text-center pa-4">
+              <div class="grey lighten-3 dark--text text-center pa-8 body-1">
                Ether Creative Lab ©{{ new Date().getFullYear() }} All Rights Reserved
               </div>
 
