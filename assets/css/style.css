@@ -7,31 +7,33 @@ html{
     margin-bottom: 0.5rem;
     line-height: 1.7;
     font-weight: 550;
-    font-family: "HKGrotesk", Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #4A4A4A;
 }
 
 .v-btn__content{
     font-weight: 600;
-    font-family: "HKGrotesk", Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 .v-application .headline{
-    font-family: "HKGrotesk", Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 .subtitle-head{
     margin-bottom: 2rem;
 }
+
 .v-application p{
-    font-size: 15px;
-    font-family: "CrimsonText", "Times New Roman", serif !important;
+    font-weight: 600;
+    font-family: 'Poiret One', cursive;
+    /* font-family: "CrimsonText", "Times New Roman", serif !important; */
 }
 
 .v-application .body-1{
-    font-family: "CrimsonText", "Times New Roman", serif !important;
+    font-weight: 600;
+    font-family: 'Poiret One', cursive !important;
 }
-
 .v-application .display-1{
-    font-family: "HKGrotesk", Arial, sans-serif !important;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .section-story{
@@ -44,7 +46,17 @@ html{
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: "HKGrotesk", Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #4A4A4A;
     font-size: 14px;
+}
+
+/* title footer */
+.v-application .subheading{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* getcontacts */
+.v-text-field .v-input__control, .v-text-field .v-input__slot, .v-text-field fieldset{
+    border-radius: 10px;
 }

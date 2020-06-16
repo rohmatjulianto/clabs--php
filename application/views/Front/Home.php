@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
   <!-- owl carousel -->
@@ -40,7 +42,7 @@
         <v-carousel id="home" height="80vh"
         dark
         hide-delimiter-background
-        show-arrows-on-hover cycle>
+        show-arrows-on-hover>
           <v-carousel-item
             v-for="(item,i) in items"
             :key="i"
@@ -84,9 +86,14 @@
             </v-row>
          
             <div class="text-right">
-              <v-btn right text>See More Portfolio
-                <v-icon class="mx-2">mdi mdi-chevron-right</v-icon>
-              </v-btn>
+            <v-btn 
+              text
+              class="ma-2"
+              href="<?=base_url()?>index.php/GetPortfolio"
+              style="text-decoration: none">
+              See More Portfolio
+              <v-icon  right dark>mdi mdi-chevron-right</v-icon>
+            </v-btn>
             </div>
            
             
@@ -146,8 +153,6 @@
               
             </div>
         </div>
-
-  
       </v-container>
       
 
@@ -179,7 +184,6 @@
                 </v-img>
             </div>
         </div>
-
   
       </v-container>
 
@@ -192,7 +196,7 @@
           <div class="text-center py-10">
             <h1 class="display-1 mb-4">Colaborate with us</h1>
             <p class="body-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio excepturi laborum a officia corrupti quibusdam neque nulla veniam corporis esse, quaerat totam expedita rem fugit eius cupiditate, nam eligendi vitae.</p>
-            <v-btn class="px-8" x-large>LET'S TALK</v-btn>
+            <v-btn href="<?=base_url();?>index.php/GetContact" class="px-8" x-large>LET'S TALK</v-btn>
           </div> 
         </v-container>
       </v-parallax>
@@ -228,7 +232,7 @@
           </v-row>
         </v-container>
       </div>
-     
+
       </v-content>
 
     <v-footer padless>
@@ -274,18 +278,18 @@
 
               <v-col cols="12" md="3">
                     <div class="pa-6 text-center">
-                        <div class="subheading font-weight-bold">Be The First To Know!</div>
+                        <div class="subheading">Be The First To Know!</div>
                         <v-btn class="mt-3" block large outlined>SUBSCRIBE</v-btn>
-                        <p class="mt-3">
+                        <div class="subheading mt-3">
                           <span >Working Hours</span>
-                          Monday - Friday 09:00 - 17:00 (GMT+7)</p>
+                          Monday - Friday 09:00 - 17:00 (GMT+7)</div>
                     </div>
               </v-col>
                   
                 </v-row>
               </v-container>
 
-              <div class="grey lighten-3 dark--text text-center pa-8 body-1">
+              <div class="grey lighten-3 dark--text text-center pa-8 ">
                Ether Creative Lab ©{{ new Date().getFullYear() }} All Rights Reserved
               </div>
 

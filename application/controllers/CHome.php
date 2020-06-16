@@ -2,9 +2,10 @@
 
 class CHome extends CI_Controller{
  
-    public function index(Type $var = null)
+    public function index()
     {
         $this->load->view('front/home');
     }
+
 }
 ?>

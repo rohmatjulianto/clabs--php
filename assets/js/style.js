@@ -25,17 +25,12 @@ var home = new Vue({
     ],
     items: [
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg',
+          src: 'http://jouley.rf.gd/Clab/assets/image/Letsdiscuss.png'
         },
         {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg',
+          src: 'https://i.picsum.photos/id/1/1440/600.jpg',
         },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg',
-        },
-        {
-          src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg',
-        },
+     
       ],
       tags: [
         'Work',
