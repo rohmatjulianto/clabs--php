@@ -103,17 +103,46 @@ to get the desired effect
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-        
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link active">
-              <i class="nav-icon fas fa-home"></i>
-              <p>
-                Home
-              </p>
-            </a>
-          </li>
+    
+               <li class="nav-item has-treeview menu-open">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-home"></i>
+                  <p>
+                    Home Page
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/widgets.html" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Banner
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Our Service</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index3.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pricing</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="./index3.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Let's Talk</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+       
+
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-briefcase"></i>
@@ -123,10 +152,26 @@ to get the desired effect
             </a>
           </li>
           <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Our Story
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link ">
               <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Contacts
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link ">
+              <i class="nav-icon fas fa-link"></i>
+              <p>
+                Social Media
               </p>
             </a>
           </li>
