@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/Back/plugins/fontawesome-free/css/all.min.css">
   <!-- IonIcons -->
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url()?>assets/Back/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -105,7 +107,7 @@ to get the desired effect
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     
                <li class="nav-item has-treeview menu-open">
-                <a href="#" class="nav-link active">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Home Page
@@ -114,7 +116,7 @@ to get the desired effect
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link active">
+                    <a href="pages/widgets.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
                         Banner
@@ -168,7 +170,7 @@ to get the desired effect
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url()?>index.php/Sosmd" class="nav-link ">
+            <a href="pages/widgets.html" class="nav-link active">
               <i class="nav-icon fas fa-link"></i>
               <p>
                 Social Media
@@ -188,9 +190,23 @@ to get the desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
+      
       <div class="container-fluid">
-        <h1 class="m-0 text-dark ">Home</h1>
-      </div><!-- /.container-fluid -->
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>
+              <?=$page?>
+            </h1>
+          </div>
+          <div class="col-sm-6">
+            <div class="breadcrumb float-sm-right">
+              <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#modal-default">
+                Add Social Media
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- /.content-header -->
 
@@ -198,43 +214,39 @@ to get the desired effect
     <div class="content">
       <div class="container-fluid">
         <div class="card">
-            <div class="card-header border-0">
-              <div class="d-flex justify-content-between">
-                <h3 class="card-title">Online Store Visitors</h3>
-                <a href="javascript:void(0);">View Report</a>
-              </div>
-            </div>
             <div class="card-body">
-              <div class="d-flex">
-                <p class="d-flex flex-column">
-                  <span class="text-bold text-lg">820</span>
-                  <span>Visitors Over Time</span>
-                </p>
-                <p class="ml-auto d-flex flex-column text-right">
-                  <span class="text-success">
-                    <i class="fas fa-arrow-up"></i> 12.5%
-                  </span>
-                  <span class="text-muted">Since last week</span>
-                </p>
-              </div>
-              <!-- /.d-flex -->
-
-              <div class="position-relative mb-4">
-                <canvas id="visitors-chart" height="200"></canvas>
-              </div>
-
-              <div class="d-flex flex-row justify-content-end">
-                <span class="mr-2">
-                  <i class="fas fa-square text-primary"></i> This Week
-                </span>
-
-                <span>
-                  <i class="fas fa-square text-gray"></i> Last Week
-                </span>
-              </div>
+              <form action="<?=base_url()?>index.php/Sosmd/save" method="post">
+               
+                      <?php 
+                        foreach ($sosmd as $value) {
+                      ?>
+                       <div class="form-group">
+                        <div class="row">
+                          <div class="col-11">
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="mdi mdi-<?=$value->icon?>"></i></span>
+                              </div>
+                              <input type="hidden" name="id[]" value="<?=$value->id?>">
+                              <input type="text" name="link[]" class="form-control" value="<?=$value->link?>">
+                            </div>
+                            <!-- /.input group -->
+                          </div>
+                          <!-- col-md-8 -->
+                          <div class="col">
+                            <a href="<?=base_url()?>index.php/Sosmd/delete?id=<?=$value->id?>" class="btn btn-danger form-control">Delete</a>
+                          </div>
+                        </div>
+                        </div>
+                      <?php
+                        }
+                      ?>
+                <input type="submit" class="btn btn-primary" value="Save Changes">
+                <!-- /.form group -->
+              </form>
             </div>
-          </div>
           <!-- /.card -->
+        </div>
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
@@ -273,5 +285,46 @@ to get the desired effect
 <script src="<?=base_url()?>assets/Back/plugins/chart.js/Chart.min.js"></script>
 <script src="<?=base_url()?>assets/Back/dist/js/demo.js"></script>
 <script src="<?=base_url()?>assets/Back/dist/js/pages/dashboard3.js"></script>
+
+
+<div class="modal fade" id="modal-default">
+  <form action="<?=base_url()?>index.php/Sosmd/add" method="post">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title">New <?=$page?></p>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     
+      <div class="modal-body">
+        
+          <div class="form-group">
+            <select class="form-control" name="icon">
+              <option selected="true" disabled="disabled">- Select Social Media -</option>
+              <option value="facebook">Facebook</option>
+              <option value="instagram">Instagram</option>
+              <option value="twitter">Twitter</option>
+              <option value="google-plus">Google plus</option>
+              <option value="linkedin">Linkedin</option>
+            </select>
+          </div>
+          <input type="text" name="link" class="form-group form-control" placeholder="Link (ex: https://facebook.com/)" >
+       
+      </div>
+
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</form>
+</div>
+<!-- /.modal -->
+
 </body>
 </html>

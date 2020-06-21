@@ -239,13 +239,21 @@
         <v-content>
 
             <div class="grey lighten-1 text-center pa-2">
+              <?php
+                foreach ($sosmd as $key => $value) {
+                
+              ?>
                 <v-btn
-                    v-for="icon in icons"
-                    :key="icon"
                     class="mx-3 white--text"
-                    icon>
-                    <v-icon size="24px">{{ icon }}</v-icon>
+                    icon
+                    href="<?=$value->link?>"
+                    target="_blank"
+                    style="text-decoration:none">
+                    <v-icon size="24px">mdi mdi-<?=$value->icon?></v-icon>
                 </v-btn>
+                <?php
+                  }
+                ?>
             </div>
 
             <v-container>
