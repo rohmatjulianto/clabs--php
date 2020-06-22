@@ -106,8 +106,8 @@ to get the desired effect
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
     
-               <li class="nav-item has-treeview menu-close">
-                <a href="#" class="nav-link">
+               <li class="nav-item has-treeview menu-open">
+                <a href="#" class="nav-link active">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Home Page
@@ -136,7 +136,7 @@ to get the desired effect
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?=base_url()?>index.php/Hmpg/letstalk" class="nav-link">
+                    <a href="<?=base_url()?>index.php/Hmpg/letstalk" class="nav-link active">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Let's Talk</p>
                     </a>
@@ -170,7 +170,7 @@ to get the desired effect
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link active">
+            <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-link"></i>
               <p>
                 Social Media
@@ -199,11 +199,10 @@ to get the desired effect
             </h1>
           </div>
           <div class="col-sm-6">
-            <div class="breadcrumb float-sm-right">
-              <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#modal-default">
-                Add Social Media
-              </button>
-            </div>
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#"><?=$page?></a></li>
+              <li class="breadcrumb-item active"><?=$pagetree?></li>
+            </ol>
           </div>
         </div>
       </div>
@@ -215,35 +214,36 @@ to get the desired effect
       <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-              <form action="<?=base_url()?>index.php/Sosmd/save" method="post">
+            <form action="<?=base_url()?>index.php/Hmpg/letstalk" enctype="multipart/form-data" method="POST" >
                
-                      <?php 
-                        foreach ($sosmd as $value) {
-                      ?>
-                       <div class="form-group">
-                        <div class="row">
-                          <div class="col-11">
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="mdi mdi-<?=$value->icon?>"></i></span>
-                              </div>
-                              <input type="hidden" name="id[]" value="<?=$value->id?>">
-                              <input type="text" name="link[]" class="form-control" value="<?=$value->link?>">
-                            </div>
-                            <!-- /.input group -->
-                          </div>
-                          <!-- col-md-8 -->
-                          <div class="col">
-                            <a href="<?=base_url()?>index.php/Sosmd/delete?id=<?=$value->id?>" class="btn btn-danger form-control">Delete</a>
-                          </div>
-                        </div>
-                        </div>
-                      <?php
-                        }
-                      ?>
-                <input type="submit" class="btn btn-primary" value="Save Changes">
-                <!-- /.form group -->
-              </form>
+               <?php 
+                 foreach ($let as $value) {
+               ?>
+               <input type="hidden" name="id" value="<?=$value->id?>">
+               <input type="hidden" name="imgold" value="<?=$value->image?>">
+
+               <label>Title</label>
+               <input type="text" name="title" class="form-group form-control" value="<?=$value->title?>">
+
+               <label>Subtitle</label>
+               <textarea name="subtitle" class="form-group form-control"><?=$value->subtitle?></textarea>
+
+               <label>Image Cover</label> <br>
+               <img src="<?=base_url('/imagelets/'.$value->image)?>" width="600" class="img-responsive form-group rounded">       
+                <div class="input-group form-group">
+                    <div class="custom-file">
+                    <input type="file" name="image"  id="exampleInputFile">
+                    <label class="custom-file-label" for="exampleInputFile"><?=$value->image?></label>
+                    </div>
+                </div>
+               
+               
+               <?php
+                 }
+               ?>
+         <input type="submit" name="submit" class="btn btn-primary " value="Save Changes">
+         <!-- /.form group -->
+       </form>
             </div>
           <!-- /.card -->
         </div>
@@ -281,50 +281,12 @@ to get the desired effect
 <!-- AdminLTE -->
 <script src="<?=base_url()?>assets/Back/dist/js/adminlte.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="<?=base_url()?>assets/Back/plugins/chart.js/Chart.min.js"></script>
-<script src="<?=base_url()?>assets/Back/dist/js/demo.js"></script>
-<script src="<?=base_url()?>assets/Back/dist/js/pages/dashboard3.js"></script>
-
-
-<div class="modal fade" id="modal-default">
-  <form action="<?=base_url()?>index.php/Sosmd/add" method="post">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <p class="modal-title">New <?=$page?></p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-     
-      <div class="modal-body">
-        
-          <div class="form-group">
-            <select class="form-control" name="icon">
-              <option selected="true" disabled="disabled">- Select Social Media -</option>
-              <option value="facebook">Facebook</option>
-              <option value="instagram">Instagram</option>
-              <option value="twitter">Twitter</option>
-              <option value="google-plus">Google plus</option>
-              <option value="linkedin">Linkedin</option>
-            </select>
-          </div>
-          <input type="text" name="link" class="form-group form-control" placeholder="Link (ex: https://facebook.com/)" >
-       
-      </div>
-
-      <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</form>
-</div>
-<!-- /.modal -->
-
+<!-- bs-custom-file-input -->
+<script src="<?=base_url()?>assets/Back/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
 </body>
 </html>

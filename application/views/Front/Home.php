@@ -101,10 +101,17 @@
 
         <v-container pa-6 mt-10 id="our-service">
           <div class="section-story text-center">
-              <h2 class="title-head ">Our Service</h2>
-              <p class="subtitle-head py-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
-          </div>
+          <?php
+              foreach ($service as $key => $value) {
+            ?>
 
+              <h2 class="title-head"><?=$value->title?></h2>
+              <p class="subtitle-head py-6"><?=$value->subtitle?></p>
+
+            <?php
+              }
+            ?>
+          </div>
           <div id="owl-1" class="owl-carousel owl-theme">
             <div class="item"  style="background-color: #F5F5F5;"
               v-for="n in 4"
@@ -158,8 +165,18 @@
 
         <v-container pa-6 mt-10 id="pricing">
           <div class="section-story text-center">
-              <h2 class="title-head">Our Pricing</h2>
-              <p class="subtitle-head py-6">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor incidunt voluptatibus sequi inventore maiores sed rerum. Magnam, quod consectetur? Neque in praesentium, quasi id odit laudantium impedit eos perspiciatis? Laboriosam?</p>
+
+            <?php
+              foreach ($pricing as $key => $value) {
+            ?>
+
+              <h2 class="title-head"><?=$value->title?></h2>
+              <p class="subtitle-head py-6"><?=$value->subtitle?></p>
+
+            <?php
+              }
+            ?>
+              
           </div>
           <div id="owl-0" class="owl-carousel owl-theme">
             <div class="item" 
@@ -186,20 +203,27 @@
         </div>
   
       </v-container>
+      <?php
+        foreach ($letstalk as $key => $value) {
+      ?>
 
-      <v-parallax
+       <v-parallax
         dark
         height="auto"
-        src="https://s3-ap-southeast-1.amazonaws.com/chicanddarling-web/setting/home_collab_img/Boenkus%20collab.jpg"
+        src="<?=base_url('/imagelets/'.$value->image)?>"
         >
         <v-container>
           <div class="text-center py-10">
-            <h1 class="display-1 mb-4">Colaborate with us</h1>
-            <p class="body-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio excepturi laborum a officia corrupti quibusdam neque nulla veniam corporis esse, quaerat totam expedita rem fugit eius cupiditate, nam eligendi vitae.</p>
+            <h1 class="display-1 mb-4"><?=$value->title?></h1>
+            <p class="body-1"><?=$value->subtitle?></p>
             <v-btn href="<?=base_url();?>index.php/GetContact" class="px-8" x-large>LET'S TALK</v-btn>
           </div> 
         </v-container>
       </v-parallax>
+      <?php
+        }
+      ?>
+     
       <div class="white py-6 text-center">
         <v-container>
           <div class="text-center">
