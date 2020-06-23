@@ -43,11 +43,19 @@
         dark
         hide-delimiter-background
         show-arrows-on-hover>
+        <?php
+          foreach ($banner as $key => $value) {
+        ?>
+
           <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
+            href="<?=$value->link?>"
+            src="<?=base_url('/imagebanner/'.$value->image)?>"
           ></v-carousel-item>
+
+        <?php
+          }
+        ?>
+   
         </v-carousel>   
 
           <v-container pa-6 mt-10 id="portfolio">
